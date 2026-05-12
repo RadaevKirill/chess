@@ -3,14 +3,14 @@
 #include <optional>
 
 #include "chess/core/move.hpp"
+#include "chess/core/piece.hpp"
 
 namespace chess::core {
     struct Record
     {
         Move move;
-        std::optional<Move> captured_piece;
+        std::optional<Piece> captured_piece;
 
-        bool previousCastlingRights;
-        std::
+        bool previous_castling_rights;
     };
 }

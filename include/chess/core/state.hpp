@@ -14,6 +14,5 @@ namespace chess::core {
         Board board;
         Color side_to_move;
 
-
     };
 }

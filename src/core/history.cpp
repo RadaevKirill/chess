@@ -4,16 +4,16 @@
 
 namespace chess::core {
 
-    void History::add_move(const Move& move) {
+    void History::add_record(const Record& record) {
         if (move_count_ >= moves_.size()) {
             throw std::out_of_range("history is full");
         }
 
-        moves_[move_count_] = move;
+        moves_[move_count_] = record;
         ++move_count_;
     }
 
-    void History::remove_last_move() {
+    void History::remove_last_record() {
         if (move_count_ == 0) {
             throw std::out_of_range("history is empty");
         }
@@ -21,15 +21,15 @@ namespace chess::core {
         --move_count_;
     }
 
-    const Move& History::get_move(size_t index) {
+    const Record& History::get_record(size_t index) {
         if (index >= move_count_) {
-            throw std::out_of_range("move index is out of range");
+            throw std::out_of_range("record index is out of range");
         }
 
         return moves_[index];
     }
 
-    const Move& History::last_move() const {
+    const Record& History::last_record() const {
         if (move_count_ == 0) {
             throw std::out_of_range("history is empty");
         }
@@ -37,7 +37,7 @@ namespace chess::core {
         return moves_[move_count_ - 1];
     }
 
-    size_t History::move_count() const {
+    size_t History::history_count() const {
         return move_count_;
     }
 

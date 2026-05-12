@@ -4,19 +4,20 @@
 #include <cstddef>
 
 #include "chess/core/move.hpp"
+#include "chess/core/record.hpp"
 
 namespace chess::core {
     class History {
     public:
-        void add_move(const Move& move);
-        void remove_last_move();
-        const Move& get_move(size_t index);
+        void add_record(const Record& record);
+        void remove_last_record();
+        const Record& get_record(size_t index);
 
-        [[nodiscard]] const Move& last_move() const;
-        [[nodiscard]] size_t move_count() const;
+        [[nodiscard]] const Record& last_record() const;
+        [[nodiscard]] size_t history_count() const;
     
     private:
-        std::array<Move, 1024> moves_;
+        std::array<Record, 1024> moves_;
         size_t move_count_ = 0;
     };
 }

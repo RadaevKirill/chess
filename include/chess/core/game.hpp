@@ -1,6 +1,5 @@
 #pragma once
 
-
 #include "chess/core/state.hpp"
 #include "chess/core/move.hpp"
 #include "chess/core/history.hpp"
