@@ -10,11 +10,7 @@ namespace chess::core {
 struct Move {
     Square from;
     Square to;
-    std::optional<PieceType> promotion;
+    std::optional<Piece> promotion;
 };
-
-[[nodiscard]] constexpr bool operator==(Move lhs, Move rhs) {
-    return lhs.from == rhs.from && lhs.to == rhs.to && lhs.promotion == rhs.promotion;
-}
 
 }

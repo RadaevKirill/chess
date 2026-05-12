@@ -1,6 +1,7 @@
 add_library(
     chess_core
     board.cpp
+    history.cpp
 )
 add_library(Chess::Core ALIAS chess_core)
 
