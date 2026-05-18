@@ -7,10 +7,10 @@
 
 namespace chess::core {
 
-struct Move {
-    Square from;
-    Square to;
-    std::optional<Piece> promotion;
-};
+    struct Move {
+        Square from;
+        Square to;
+        std::optional<Piece> promotion;
+    };
 
 }
