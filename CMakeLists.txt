@@ -12,6 +12,12 @@ project(
 option(CHESS_BUILD_TESTS "Build chess tests" ON)
 
 add_subdirectory(src/core)
+add_subdirectory(src/cli)
+add_subdirectory(src/app)
+
+# Финальный исполняемый файл — собирает всё вместе
+add_executable(chess_game main.cpp)
+target_link_libraries(chess_game PRIVATE Chess::App)
 
 if(CHESS_BUILD_TESTS)
     enable_testing()
